@@ -61,73 +61,76 @@ function countWords(str) {
   }
 }
 ```
-~~~~
 
-****************************************
-02 - isPersonOldEnoughToDrinkAndDrive
-****************************************
 
-Instructions from your teacher:
-Write a function called "isPersonOldEnoughToDrinkAndDrive".
+## #2 - isPersonOldEnoughToDrinkAndDrive
 
-Given a "person" object, that contains an "age" property, "isPersonOldEnoughToDrinkAndDrive" returns whether the given person is old enough to legally drink and drive in the United States.
 
-Notes:
-* The legal drinking age in the United States is 21.
-* The legal driving age in the United States is 16.
-* It is always illegal to drink and drive in the United States.
+> Instructions from your teacher:
+> Write a function called "isPersonOldEnoughToDrinkAndDrive".
+>
+> Given a "person" object, that contains an "age" property, "isPersonOldEnoughToDrinkAndDrive" returns whether the given person is old enough to legally drink and drive in the United States.
+>
+> Notes:
+> * The legal drinking age in the United States is 21.
+> * The legal driving age in the United States is 16.
+> * It is always illegal to drink and drive in the United States.
+>
+> ```
+> var obj = {
+  > age: 45
+> };
+> var output = isPersonOldEnoughToDrinkAndDrive(obj);
+> console.log(output); // --> false
+>
+> Starter Code :
+> function isPersonOldEnoughToDrinkAndDrive(person) {
+  > // your code here
+> }
+> ```
 
-var obj = {
-  age: 45
-};
-var output = isPersonOldEnoughToDrinkAndDrive(obj);
-console.log(output); // --> false
+### Answer:
 
-Starter Code :
-function isPersonOldEnoughToDrinkAndDrive(person) {
-  // your code here
-}
-
--------------------------------------------------------------------------------
-answer
--------------------------------------------------------------------------------
-
+```javascript
 function isPersonOldEnoughToDrinkAndDrive(person) {
   return false;
 }
+```
 
 
-****************************************
-10 - getOddLengthWordsAtProperty
-****************************************
-Instructions from your teacher:
-Write a function called "getOddLengthWordsAtProperty".
-
-Given an object and a key, "getOddLengthWordsAtProperty" returns an array containing all the odd length word elements of the array located at the given key.
-
-Notes:
-* If the array is empty, it should return an empty array.
-* If it contains no odd length elements, it should return an empty array.
-* If the property at the given key is not an array, it should return an empty array.
-* If there is no property at the given key, it should return an empty array.
-
-var obj = {
-  key: ['It', 'has', 'some', 'words']
-};
-var output = getOddLengthWordsAtProperty(obj, 'key');
-console.log(output); // --> ['has', 'words']
-
-Starter Code :
-function getOddLengthWordsAtProperty(obj, key) {
-  // your code here
-}
--------------------------------------------------------------------------------
-Answer
--------------------------------------------------------------------------------
-TIPS:
-  - look up Array.isArray(), which is a subset of the typeof in javascript
+## #10 - getOddLengthWordsAtProperty
 
 
+> Instructions from your teacher:
+> Write a function called "getOddLengthWordsAtProperty".
+>
+> Given an object and a key, "getOddLengthWordsAtProperty" returns an array containing all the odd length word elements of the array located at the given key.
+
+> Notes:
+> * If the array is empty, it should return an empty array.
+> * If it contains no odd length elements, it should return an empty array.
+> * If the property at the given key is not an array, it should return an empty array.
+> * If there is no property at the given key, it should return an empty array.
+>
+> ```
+> var obj = {
+  > key: ['It', 'has', 'some', 'words']
+> };
+> var output = getOddLengthWordsAtProperty(obj, 'key');
+> console.log(output); // --> ['has', 'words']
+>
+> Starter Code :
+> function getOddLengthWordsAtProperty(obj, key) {
+  > // your code here
+> }
+> ```
+
+### Answer:
+
+> TIPS:
+  > - look up Array.isArray(), which is a subset of the typeof in javascript
+
+```javascript
 function getOddLengthWordsAtProperty(obj, key) {
   //initiate new array
   var newArr = [];
@@ -151,6 +154,7 @@ function getOddLengthWordsAtProperty(obj, key) {
   }
   return newArr;
 }
+```
 
 
 
