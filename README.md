@@ -122,6 +122,9 @@ function getOddLengthWordsAtProperty(obj, key) {
 -------------------------------------------------------------------------------
 Answer
 -------------------------------------------------------------------------------
+TIPS:
+  - look up Array.isArray(), which is a subset of the typeof in javascript
+
 
 function getOddLengthWordsAtProperty(obj, key) {
   //initiate new array
