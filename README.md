@@ -1,8 +1,8 @@
-Hack Reactor Prep
-Algorithm Questions
+# Hack Reactor Prep - Module 1: Exercises [with Answers]
 
-                            Module 1: Exercises
-                      ------------------------------
+this prep course is available for free at [prep.hackreactor.com](http://prep.hackreactor.com/).
+this prep course is available for free at [prep.hackreactor](http://prep.hackreactor.com/).                     
+---
 
 ****************************************
 01 - countWords
