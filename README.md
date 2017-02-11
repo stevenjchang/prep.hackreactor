@@ -25,11 +25,15 @@ function countWords(str) {
 }
 ```
 
-## ANSWER
-### ANSWER
-#### ANSWER
-##### ANSWER  
+## Answer
+### Answer
+#### Answer
+##### Answer  
 
+var output = countWords('ask a bunch get a bunch');
+console.log(output); // --> {ask: 1, a: 2, bunch: 2, get: 1}
+
+```javascript
 var output = countWords('ask a bunch get a bunch');
 console.log(output); // --> {ask: 1, a: 2, bunch: 2, get: 1}
 
@@ -62,6 +66,8 @@ function countWords(str) {
   return newObj;
   }
 }
+```
+~~~~
 
 ****************************************
 02 - isPersonOldEnoughToDrinkAndDrive
