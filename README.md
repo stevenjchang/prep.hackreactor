@@ -331,6 +331,70 @@ function countAllCharacters(str) {
 }
 
 ```
+---
+
+
+## #8 - getElementsGreaterThan10AtProperty
+
+> Instructions from your teacher:
+> Write a function called "getElementsGreaterThan10AtProperty".
+>
+> Given an object and a key, "getElementsGreaterThan10AtProperty" returns an array containing the elements within the array, located at the given key, that are greater than 10.
+>
+> Notes:
+> * If the array is empty, it should return an empty array.
+> * If the array contains no elements greater than 10, it should return an empty array.
+> * If the property at the given key is not an array, it should return an empty array.
+> * If there is no property at the key, it should return an empty array.
+>
+> ```javascript
+> var obj = {
+  > key: [1, 20, 30]
+> };
+> var output = getElementsGreaterThan10AtProperty(obj, 'key');
+> console.log(output); // --> [20, 30]
+>
+> Starter Code :
+> function getElementsGreaterThan10AtProperty(obj, key) {
+  > // your code here
+> }
+> ```
+
+### Answer:
+
+> TIPS:
+> * Syntax of .forEach()
+  >> array.forEach(function(currentValue, index, arr), thisValue)
+
+```javascript
+
+function getElementsGreaterThan10AtProperty(obj, key) {
+  //initialize empty new array
+  var newArr = [];
+
+  //if property at given key is not an array, or if there is no property, immediately return new array
+  if (!(Array.isArray(obj[key])) || obj[key] === undefined) {
+    return newArr;
+  }
+
+  //create variable arrayInsideObject
+  var arrayInsideObject = obj[key];
+
+  //iterate through "key" parameter
+  arrayInsideObject.forEach(function(value, index){
+    //if value greater than 10 => add to empty array
+    if (value > 10){
+      newArr.push(value);
+    } else {
+      //do nothing
+    }
+  });
+  return newArr;
+}
+
+
+```
+
 
 
 
