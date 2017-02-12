@@ -61,7 +61,7 @@ function countWords(str) {
   }
 }
 ```
-
+---
 
 ## #2 - isPersonOldEnoughToDrinkAndDrive
 
@@ -96,7 +96,7 @@ function isPersonOldEnoughToDrinkAndDrive(person) {
   return false;
 }
 ```
-
+---
 
 ## #3 - extend
 
@@ -148,6 +148,105 @@ function extend(obj1, obj2) {
   return obj1;
 }
 ```
+---
+
+
+## #5 - select
+
+> Instructions from your teacher:
+> Write a function called "select".
+>
+> Given an array and an object, "select" returns a new object whose properties are those in the given object AND whose keys are present in the given array.
+>
+> Notes:
+> * If keys are present in the given array, but are not in the given object, it should ignore them.
+> * It does not modify the passed in object.
+>
+> ```javascript
+> var arr = ['a', 'c', 'e'];
+> var obj = {
+  > a: 1,
+  > b: 2,
+  > c: 3,
+  > d: 4
+> };
+> var output = select(arr, obj);
+> console.log(output); // --> { a: 1, c: 3 }
+>
+>
+> Starter Code:
+> function select(arr, obj) {
+  > // your code here
+> }
+> ```
+
+### Answer:
+
+#### Two ways to solve, iterating through array or object 
+
+**iterating through ARRAY**
+
+```javascript
+
+function select(arr, obj) {
+  //initialize new object
+  var newObj = {};
+  //iterate through each index of array
+  arr.forEach(function(element){
+    //if object has a key identical to array index, (if it exists)
+    if (obj[element]){
+      newObj[element] = obj[element];
+    } else {
+      //do nothing
+    }
+  });
+  return newObj;
+}
+
+```
+
+**iterating through OBJECT**
+> TIPS:
+> * look up Object.keys(obj).forEach()
+
+```javascript
+
+function select(arr, obj) {
+  //initialize new object
+  var newObj = {};
+
+  //iterate through each key
+  Object.keys(obj).forEach(function(key){
+    //if key exists in the array
+    if (arr.indexOf(key) !== -1){
+      //add to newObj
+      newObj[key] = obj[key];
+    } else {
+
+    }
+  });
+  return newObj;
+}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## #10 - getOddLengthWordsAtProperty
 
