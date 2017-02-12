@@ -2,9 +2,9 @@
 
 this prep course is available for free at [prep.hackreactor.com](http://prep.hackreactor.com/).
 
- #1
-## #1 - countWords
+> to find/skip to a specific question, use the Find function on your browser, but clicking 'cmd-f' (on Mac) and 'ctrl-f' (on Windows).
 
+## #1 - countWords
 
 >Instructions from your teacher:
 Write a function called "countWords".
@@ -76,7 +76,7 @@ function countWords(str) {
 > * The legal driving age in the United States is 16.
 > * It is always illegal to drink and drive in the United States.
 >
-> ```
+> ```javascript
 > var obj = {
   > age: 45
 > };
@@ -97,6 +97,57 @@ function isPersonOldEnoughToDrinkAndDrive(person) {
 }
 ```
 
+
+## #3 - extend
+
+> Instructions from your teacher:
+> Write a function called "extend".
+>
+> Given two objects, "extend" adds properties from the 2nd object to the 1st object.
+>
+> Notes:
+> * Add any keys that are not in the 1st object.
+> * If the 1st object already has a given key, ignore it (do not overwrite the property value).
+> * Do not modify the 2nd object at all.
+>
+> ```javascript
+> var obj1 = {
+  > a: 1,
+  > b: 2
+> };
+> var obj2 = {
+  > b: 4,
+  > c: 3
+> };
+>
+> extend(obj1, obj2);
+>
+> console.log(obj1); // --> {a: 1, b: 2, c: 3}
+> console.log(obj2); // --> {b: 4, c: 3}
+>
+> Starter Code :
+> function extend(obj1, obj2) {
+  > // your code here
+> }
+> ```
+
+### Answer:
+
+```javascript
+function extend(obj1, obj2) {
+  //iterate through obj2's keys
+  for (var key in obj2) {
+    //at each key, evaulate if obj2 at key exists in obj1
+    if (obj1[key] === undefined) { //the keyword "key" on this line refers to obj2
+      //if it doesn't exist, set it
+      obj1[key] = obj2[key];
+    } else {
+      //else do nothing
+    }
+  }
+  return obj1;
+}
+```
 
 ## #10 - getOddLengthWordsAtProperty
 
@@ -128,7 +179,7 @@ function isPersonOldEnoughToDrinkAndDrive(person) {
 ### Answer:
 
 > TIPS:
-  > - look up Array.isArray(), which is a subset of the typeof in javascript
+  > - look up Array.isArray(), which checks the typeof of an Array (which is a Javascript Object)
 
 ```javascript
 function getOddLengthWordsAtProperty(obj, key) {
@@ -150,7 +201,6 @@ function getOddLengthWordsAtProperty(obj, key) {
     } else {
       //do nothing
     }
-
   }
   return newArr;
 }
