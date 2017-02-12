@@ -2,7 +2,6 @@
 
 this prep course is available for free at [prep.hackreactor.com](http://prep.hackreactor.com/).
 
-> to find/skip to a specific question, use the Find function on your browser, but clicking 'cmd-f' (on Mac) and 'ctrl-f' (on Windows).
 
 ## #1 - countWords
 
@@ -182,7 +181,7 @@ function extend(obj1, obj2) {
 
 ### Answer:
 
-#### Two ways to solve, iterating through array or object 
+#### Two ways to solve, iterating through array or object
 
 **iterating through ARRAY**
 
@@ -229,6 +228,61 @@ function select(arr, obj) {
 }
 
 ```
+---
+
+
+## #6 - getElementsLessThan100AtProperty
+
+> Instructions from your teacher:
+> Write a function called "getElementsLessThan100AtProperty".
+>
+> Given an object and a key, "getElementsLessThan100AtProperty" returns an array containing all the elements of the array located at the given key that are less than 100.
+>
+> Notes:
+> * If the array is empty, it should return an empty array.
+> * If the array contains no elements less than 100, it should return an empty array.
+> * If the property at the given key is not an array, it should return an empty array.
+> * If there is no property at the key, it should return an empty array.
+>
+> ```javascript
+> var obj = {
+  > key: [1000, 20, 50, 500]
+> };
+> var output = getElementsLessThan100AtProperty(obj, 'key');
+> console.log(output); // --> [20, 50]
+>
+> Starter Code :
+> function getElementsLessThan100AtProperty(obj, key) {
+  > // your code here
+> }
+> ```
+
+### Answer:
+//objective: iterate through array inside of object, directly
+
+```javascript
+
+function getElementsLessThan100AtProperty(obj, key) {
+  var newArr = [];
+  var arrayInsideObject = obj[key];
+
+  //if array is empty, if input not an array, if no property at key, return newArr immediately
+  if (obj === undefined || arrayInsideObject === undefined || !(Array.isArray(arrayInsideObject)) ){
+    console.log("if");
+    return newArr;
+  }
+
+  //iterate through array at "key" inside object
+  arrayInsideObject.forEach(function(elem){
+    if (elem < 100){
+      newArr.push(elem);
+    }
+  });
+  return newArr;  
+}
+
+```
+
 
 
 
@@ -304,19 +358,3 @@ function getOddLengthWordsAtProperty(obj, key) {
   return newArr;
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
-****************************************
-****************************************
-
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
