@@ -260,15 +260,17 @@ function select(arr, obj) {
 ### Answer:
 //objective: iterate through array inside of object, directly
 
+> TIPS:
+> - look up Array.isArray(), which checks the typeof of an Array (which is a Javascript Object)
+
 ```javascript
 
 function getElementsLessThan100AtProperty(obj, key) {
   var newArr = [];
   var arrayInsideObject = obj[key];
 
-  //if array is empty, if input not an array, if no property at key, return newArr immediately
+  //if array is empty, or if input not an array, or if no property at key, return newArr immediately
   if (obj === undefined || arrayInsideObject === undefined || !(Array.isArray(arrayInsideObject)) ){
-    console.log("if");
     return newArr;
   }
 
@@ -282,7 +284,53 @@ function getElementsLessThan100AtProperty(obj, key) {
 }
 
 ```
+---
 
+
+## #7 - countAllCharacters
+
+> Instructions from your teacher:
+> Write a function called "countAllCharacters".
+>
+> Given a string, "countAllCharacters" returns an object where each key is a character in the given string. The value of each key should be how many times each character appeared in the given string.
+>
+> Notes:
+> * If given an empty string, countAllCharacters should return an empty object.
+>
+> ```javascript
+> var output = countAllCharacters('banana');
+> console.log(output); // --> {b: 1, a: 3, n: 2}
+>
+> Starter Code :
+> function countAllCharacters(str) {
+  > // your code here
+> }
+> ```
+
+### Answer:
+
+```javascript
+
+function countAllCharacters(str) {
+  //initialize empty new object
+  var newObj = {};
+
+  //iterate through each char of string
+  for (i = 0; i < str.length; i++){
+    var char = str[i];
+    //if char exist in new object
+    if (newObj[char]){
+      //add 1
+      newObj[char] += 1;
+    } else {
+      //create key:value pair, set value to 1
+      newObj[char] = 1;
+    }
+  }
+  return newObj;
+}
+
+```
 
 
 
