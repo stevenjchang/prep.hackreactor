@@ -392,27 +392,58 @@ function getElementsGreaterThan10AtProperty(obj, key) {
   return newArr;
 }
 
-
 ```
 
+## #9 - getAverageOfElementsAtProperty
+
+> Write a function called "getAverageOfElementsAtProperty".
+>
+> Given an object and a key, "getAverageOfElementsAtProperty" returns the average of all the elements in the array located at the given key.
+>
+> Notes:
+> * If the array at the given key is empty, it should return 0.
+> * If the property at the given key is not an array, it should return 0.
+> * If there is no property at the given key, it should return 0.
+>
+> ```javascript
+> var obj = {
+  > key: [1, 2, 3]
+> };
+> var output = getAverageOfElementsAtProperty(obj, 'key');
+> console.log(output); // --> 2
+>
+> Starter Code :
+> function getAverageOfElementsAtProperty(obj, key) {
+  > // your code here
+> }
+> ```
+
+### Answer:
+
+```javascript
+
+function getAverageOfElementsAtProperty(obj, key) {
+  //initiate sumOfElements to 0
+  var total = 0;
+  var arrayInsideObject = obj[key];
+  //if array is empty, or property is not array, or no property at key, immediately return 0
+  //NOTE: test did not pass unless I put === undefined first
+  if (arrayInsideObject === undefined || arrayInsideObject.length < 1 || !(Array.isArray(arrayInsideObject)) ) {
+    return total;
+  }
+
+  //iterate through array
+  arrayInsideObject.forEach(function(value){
+    // add number at each index to the total
+    total += value;
+  });
+  //return the total divided by number of index in array
+  return total / arrayInsideObject.length;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
+---
 
 ## #10 - getOddLengthWordsAtProperty
 
@@ -470,3 +501,30 @@ function getOddLengthWordsAtProperty(obj, key) {
   return newArr;
 }
 ```
+---
+
+
+## #11 - getAverageOfElementsAtProperty
+
+> Write a function called "getAverageOfElementsAtProperty".
+>
+> Given an object and a key, "getAverageOfElementsAtProperty" returns the average of all the elements in the array located at the given key.
+>
+> Notes:
+> * If the array at the given key is empty, it should return 0.
+> * If the property at the given key is not an array, it should return 0.
+> * If there is no property at the given key, it should return 0.
+>
+>
+> ```javascript
+> var obj = {
+  > key: [1, 2, 3]
+> };
+> var output = getAverageOfElementsAtProperty(obj, 'key');
+> console.log(output); // --> 2
+>
+> Starter Code :
+> function getAverageOfElementsAtProperty(obj, key) {
+  > // your code here
+> }
+> ```
