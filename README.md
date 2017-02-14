@@ -644,8 +644,60 @@ function getOddElementsAtProperty(obj, key) {
   }
   //iterate through array
   arrayInsideObject.forEach(function(value, index){
-    //if element length at index is odd
+    //if element at index is odd
     if (value % 2 !== 0){
+      //add to new array
+      newArr.push(value);
+    } else {
+      //do nothing
+    }
+  });
+  return newArr;  
+}
+```
+
+
+## #14 - getEvenElementsAtProperty
+
+> Write a function called "getEvenElementsAtProperty".
+>
+> Given an object and a key, "getEvenElementsAtProperty" returns an array containing all the even elements of the array located at the given key.
+>
+> Notes:
+> * If the array is empty, it should return an empty array.
+> * If the array contains no even elements, it should return an empty array.
+> * If the property at the given key is not an array, it should return an empty array.
+> * If there is no property at the given key, it should return an empty array.
+>
+> ```javascript
+> var obj = {
+  > key: [1000, 11, 50, 17]
+> };
+> var output = getEvenElementsAtProperty(obj, 'key');
+> console.log(output); // --> [1000, 50]
+>
+> Starter Code :
+> function getEvenElementsAtProperty(obj, key) {
+  > // your code here
+> }
+> ```
+
+### Answer:
+
+```javascript
+function getEvenElementsAtProperty(obj, key) {
+  //initialize empty new array
+  var newArr = [];
+  //set array inside given key to a variable
+  var arrayInsideObject = obj[key];
+  //if array is empty, or property at given key not an array, or no property at key
+  if (arrayInsideObject === undefined || !(Array.isArray(arrayInsideObject)) || arrayInsideObject.length < 1){
+    return newArr;  
+  }
+  //iterate through array
+  arrayInsideObject.forEach(function(value, index){
+    //if element at index is even
+    if (value % 2 === 0){
       //add to new array
       newArr.push(value);
     } else {
