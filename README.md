@@ -934,3 +934,47 @@ function getSumOfAllElementsAtProperty(obj, key) {
   return sumOfAllElements;
 }
 ```
+
+## #19 - getAllButLastElementOfProperty
+
+> Write a function called "getAllButLastElementOfProperty".
+>
+> Given an object and a key, "getAllButLastElementOfProperty" returns an array containing all but the last element of the array located at the given key.
+>
+> Notes:
+> * If the array is empty, it should return an empty array.
+> * If the property at the given key is not an array, it return an empty array.
+> * If there is no property at the key, it should return an empty array.
+>
+> ```javascript
+> var obj = {
+  > key: [1, 2, 3]
+> };
+> var output = getAllButLastElementOfProperty(obj, 'key');
+> console.log(output); // --> [1,2]
+>
+> Starter Code :
+> function getAllButLastElementOfProperty(obj, key) {
+  > // your code here
+> }
+> ```
+
+### Answer:
+
+```javascript
+function getAllButLastElementOfProperty(obj, key) {
+  //set array at given key to variable
+  var arrayInsideObject = obj[key];
+
+  //if array is empty, or property at given key is not an array, or there is no property at key, immediately return empty array
+  if (arrayInsideObject === undefined || arrayInsideObject.length < 1 || !(Array.isArray(arrayInsideObject)) ){
+    return [];
+  }
+
+  //remove last element from array
+  arrayInsideObject.pop();
+
+  //return the array
+  return arrayInsideObject;
+}
+```
