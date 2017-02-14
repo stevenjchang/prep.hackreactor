@@ -736,10 +736,10 @@ function getEvenElementsAtProperty(obj, key) {
 
 > TIPS: two ways to find the min value
 > * `Math.min.apply(Math, array)`
-  > * (because Math.min() does not work on arrays)
-  > * e.g. `Math.min.apply(null, arrayInsideObject)`
+  >>  (because Math.min() does not work on arrays)
+  >>  e.g. `Math.min.apply(null, arrayInsideObject)`
 > * `Math.min( ...arr )`  //this only works in ES6
-  > * e.g. `Math.min(...arrayInsideObject)`
+  >>  e.g. `Math.min(...arrayInsideObject)`
 
 ```javascript
 function getSmallestElementAtProperty(obj, key) {
@@ -758,3 +758,57 @@ function getSmallestElementAtProperty(obj, key) {
   // return Math.min(...arrayInsideObject);
 }
 ```
+---
+
+
+## #16 - getLargestElementAtProperty
+
+> Write a function called "getLargestElementAtProperty".
+>
+> Given an object and a key, "getLargestElementAtProperty" returns the largest element in the array located at the given key.
+>
+> Notes:
+> * If the array is empty, it should return undefined.
+> * If the property at the given key is not an array, it should return undefined.
+> * If there is no property at the key, it should return undefined.
+>
+> ```javascript
+> var obj = {
+  > key: [1, 2, 4]
+> };
+> var output = getLargestElementAtProperty(obj, 'key');
+> console.log(output); // --> 4
+>
+> Starter Code :
+> function getLargestElementAtProperty(obj, key) {
+  > // your code here
+> }
+> ```
+
+### Answer:
+
+> TIPS: two ways to find the max value
+> * `Math.max.apply(Math, array)`
+  >>  (because Math.max() does not work on arrays)
+  >>  e.g. `Math.max.apply(null, arrayInsideObject)`
+> * `Math.max( ...arr )`  //this only works in ES6
+  >>  e.g. `Math.max(...arrayInsideObject)`
+
+```javascript
+function getLargestElementAtProperty(obj, key) {
+  //set array inside given key to a variable
+  var arrayInsideObject = obj[key];
+
+  //if array is empty, or property at given key not an array, or no property at key
+  if (arrayInsideObject === undefined || !(Array.isArray(arrayInsideObject)) || arrayInsideObject.length < 1){
+    return undefined;  
+  }
+
+  //return the smallest element at property (array at given key)
+  //method 1:
+  return Math.max.apply(null, arrayInsideObject);
+  //or method 2: (only in ES6)
+  // return Math.max(...arrayInsideObject);
+}
+```
+---
