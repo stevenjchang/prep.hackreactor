@@ -812,3 +812,76 @@ function getLargestElementAtProperty(obj, key) {
 }
 ```
 ---
+
+
+## #17 - getProductOfAllElementsAtProperty
+
+> Write a function called "getProductOfAllElementsAtProperty".
+>
+> Given an object and a key, "getProductOfAllElementsAtProperty" returns the product of all the elements in the array located at the given key.
+>
+> Notes:
+> * If the array is empty, it should return 0.
+> * If the property at the given key is not an array, it should return 0.
+> * If there is no property at the given key, it should return 0.
+>
+> ```javascript
+> var obj = {
+  > key: [1, 2, 3, 4]
+> };
+> var output = getProductOfAllElementsAtProperty(obj, 'key');
+> console.log(output); // --> 24
+>
+> Starter Code :
+> function getProductOfAllElementsAtProperty(obj, key) {
+  > // your code here
+> }
+> ```
+
+### Answer:
+
+#### Method 1
+```javascript
+function getProductOfAllElementsAtProperty(obj, key) {
+  //initialize productOfAllElements to 1;
+  var productOfAllElements = 1;
+  //set array at given key to variable
+  var arrayInsideObject = obj[key];
+
+  //if array is empty, or property at given key is not an array, or no property at given key, immediately return 0
+  if (arrayInsideObject === undefined || arrayInsideObject.length < 1 || !(Array.isArray(arrayInsideObject)) ){
+    return 0;
+  }
+
+  arrayInsideObject.forEach(function(value, index){
+    productOfAllElements = productOfAllElements * value;
+  })
+  return productOfAllElements;
+}
+```
+
+#### Method 2: using .reduce()
+> TIPS:
+> * reduce syntax
+> > array.reduce(function(accumulator, currentValue, currentIndex, arr), initialValue)
+
+```javascript
+function getProductOfAllElementsAtProperty(obj, key) {
+  //initialize productOfAllElements to 0;
+  var productOfAllElements = 0;
+  //set array at given key to variable
+  var arrayInsideObject = obj[key];
+
+  //if array is empty, or property at given key is not an array, or no property at given key, immediately return productOfAllElements
+  if (arrayInsideObject === undefined || arrayInsideObject.length < 1 || !(Array.isArray(arrayInsideObject)) ){
+    return productOfAllElements;
+  }
+
+  //set productOfAllElements to
+  //the iterated result of multiplying each value at given key, with an initial value of 1
+  productOfAllElements = arrayInsideObject.reduce(function(acc, value, index){
+    return acc * value;
+  }, 1);
+  return productOfAllElements;
+}
+```
