@@ -603,3 +603,55 @@ function getSquaredElementsAtProperty(obj, key) {
 }
 ```
 ---
+
+
+## #13 - getOddElementsAtProperty
+
+> Write a function called "getOddElementsAtProperty".
+>
+> Given an object and a key, "getOddElementsAtProperty" returns an array containing all the odd elements of the array located at the given key.
+>
+> Notes:
+> * If the array is empty, it should return an empty array.
+> * If it contains no odd elements, it should return an empty array.
+> * If the property at the given key is not an array, it should return an empty array.
+> * If there is no property at the key, it should return an empty array.
+>
+> ```javascript
+> var obj = {
+  > key: [1, 2, 3, 4, 5]
+> };
+> var output = getOddElementsAtProperty(obj, 'key');
+> console.log(output); // --> [1, 3, 5]
+>
+> Starter Code :
+> function getOddElementsAtProperty(obj, key) {
+  > // your code here
+> }
+> ```
+
+### Answer:
+
+```javascript
+function getOddElementsAtProperty(obj, key) {
+  //initialize empty new array
+  var newArr = [];
+  //set array inside given key to a variable
+  var arrayInsideObject = obj[key];
+  //if array is empty, or property at given key not an array, or no property at key
+  if (arrayInsideObject === undefined || !(Array.isArray(arrayInsideObject)) || arrayInsideObject.length < 1){
+    return newArr;  
+  }
+  //iterate through array
+  arrayInsideObject.forEach(function(value, index){
+    //if element length at index is odd
+    if (value % 2 !== 0){
+      //add to new array
+      newArr.push(value);
+    } else {
+      //do nothing
+    }
+  });
+  return newArr;  
+}
+```
