@@ -707,3 +707,54 @@ function getEvenElementsAtProperty(obj, key) {
   return newArr;  
 }
 ```
+
+## #15 - getSmallestElementAtProperty
+
+> Write a function called "getSmallestElementAtProperty".
+>
+> Given an object and a key, "getSmallestElementAtProperty" returns the smallest element in the array located at the given key.
+>
+> Notes:
+> * If the array is empty, it should return undefined.
+> * If the property at the given key is not an array, it should return undefined.
+> * If there is no property at the key, it should return undefined.
+>
+> ```javascript
+> var obj = {
+  > key: [2, 1, 5]
+> };
+> var output = getSmallestElementAtProperty(obj, 'key');
+> console.log(output); // --> 1
+>
+> Starter Code :
+> function getSmallestElementAtProperty(obj, key) {
+  > // your code here
+> }
+> ```
+
+### Answer:
+
+> TIPS: two ways to find the min value
+> * `Math.min.apply(Math, array)`
+  > * (because Math.min() does not work on arrays)
+  > * e.g. `Math.min.apply(null, arrayInsideObject)`
+> * `Math.min( ...arr )`  //this only works in ES6
+  > * e.g. `Math.min(...arrayInsideObject)`
+
+```javascript
+function getSmallestElementAtProperty(obj, key) {
+  //set array inside given key to a variable
+  var arrayInsideObject = obj[key];
+
+  //if array is empty, or property at given key not an array, or no property at key
+  if (arrayInsideObject === undefined || !(Array.isArray(arrayInsideObject)) || arrayInsideObject.length < 1){
+    return undefined;  
+  }
+
+  //return the smallest element at property (array at given key)
+  //method 1:
+  return Math.min.apply(null, arrayInsideObject);
+  //or method 2: (only in ES6)
+  // return Math.min(...arrayInsideObject);
+}
+```
