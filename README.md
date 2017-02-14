@@ -861,6 +861,7 @@ function getProductOfAllElementsAtProperty(obj, key) {
 ```
 
 #### Method 2: using .reduce()
+
 > TIPS:
 > * reduce syntax
 > > array.reduce(function(accumulator, currentValue, currentIndex, arr), initialValue)
