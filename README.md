@@ -864,7 +864,7 @@ function getProductOfAllElementsAtProperty(obj, key) {
 
 > TIPS:
 > * reduce syntax
-> > array.reduce(function(accumulator, currentValue, currentIndex, arr), initialValue)
+>> array.reduce(function(accumulator, currentValue, currentIndex, arr), initialValue)
 
 ```javascript
 function getProductOfAllElementsAtProperty(obj, key) {
@@ -884,5 +884,53 @@ function getProductOfAllElementsAtProperty(obj, key) {
     return acc * value;
   }, 1);
   return productOfAllElements;
+}
+```
+---
+
+
+## #18 - getSumOfAllElementsAtProperty
+
+> Write a function called "getSumOfAllElementsAtProperty".
+>
+> Given an object and a key, "getSumOfAllElementsAtProperty" returns the sum of all the elements in the array located at the given key.
+>
+> Notes:
+> * If the array is empty, it should return 0.
+> * If the property at the given key is not an array, it should return 0.
+> * If there is no property at the key, it should return 0.
+>
+> ```javascript
+> var obj = {
+  > key: [4, 1, 8]
+> };
+> var output = getSumOfAllElementsAtProperty(obj, 'key');
+> console.log(output); // --> 13
+>
+> Starter Code :
+> function getSumOfAllElementsAtProperty(obj, key) {
+  > // your code here
+> }
+> ```
+
+### Answer:
+
+```javascript
+function getSumOfAllElementsAtProperty(obj, key) {
+  //initialize sumOfAllElements to 0;
+  var sumOfAllElements = 0;
+  //set array at given key to variable
+  var arrayInsideObject = obj[key];
+
+  //if array is empty, or property at given key is not an array, or no property at given key, immediately return sumOfAllElements
+  if (arrayInsideObject === undefined || arrayInsideObject.length < 1 || !(Array.isArray(arrayInsideObject)) ){
+    return sumOfAllElements;
+  }
+
+  //iterate through array at given key, add value at each index to sumOfAllElements
+  arrayInsideObject.forEach(function(value, index){
+    sumOfAllElements += value;
+  });
+  return sumOfAllElements;
 }
 ```
