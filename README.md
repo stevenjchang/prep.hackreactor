@@ -1215,3 +1215,41 @@ function addFullNameProperty(obj) {
   obj.fullName = obj["firstName"] + " " + obj["lastName"];
 }
 ```
+---
+
+## #26 - removeStringValuesLongerThan
+
+> Write a function called "removeStringValuesLongerThan".
+>
+> Given an number and an object, "removeStringValuesLongerThan" removes any properties on the given object whose values are strings longer than the given number.
+>
+> ```
+> var obj = {
+  > name: 'Montana',
+  > age: 20,
+  > location: 'Texas'
+> };
+> removeStringValuesLongerThan(6, obj);
+> console.log(obj); // { age: 20, location: 'Texas' }
+>
+> Starter Code :
+> function removeStringValuesLongerThan(num, obj) {
+  > // your code here
+> }
+> ```
+
+### Answer:
+
+```javascript
+function removeStringValuesLongerThan(num, obj) {
+  //iterate through object
+  for (var key in obj) {
+    //if value's length at key is greater than num, remove
+    if (obj[key].length > num){
+      //remove key/value pair
+      delete obj[key];
+    }
+  }
+  return obj;
+}
+```
