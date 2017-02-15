@@ -1064,3 +1064,46 @@ function getLastElementOfProperty(obj, key) {
   return arrayInsideObject.pop();
 }
 ```
+---
+
+
+## #22 - getFirstElementOfProperty
+
+> Write a function called "getFirstElementOfProperty".
+>
+> Given an object and a key, "getFirstElementOfProperty" returns the first element of the array located at the given key.
+>
+> Notes:
+> * If the array is empty, it should return undefined.
+> * If the property at the given key is not an array, it should return undefined.
+> * If there is no property at the key, it should return undefined.
+>
+> ```
+> var obj = {
+  > key: [1, 2, 4]
+> };
+> var output = getFirstElementOfProperty(obj, 'key');
+> console.log(output); // --> 1
+>
+> Starter Code :
+> function getFirstElementOfProperty(obj, key) {
+  > // your code here
+> }
+> ```
+
+### Answer:
+
+```javascript
+function getFirstElementOfProperty(obj, key) {
+  //set array at given key to variable
+  var arrayInsideObject = obj[key];
+
+  //if array is empty, or property at given key is not an array, or there is no property at key, immediately return undefined array
+  if (arrayInsideObject === undefined || arrayInsideObject.length < 1 || !(Array.isArray(arrayInsideObject)) ){
+    return undefined;
+  }
+
+  //pop off that last element of the array and return it
+  return arrayInsideObject.shift();
+}
+```
