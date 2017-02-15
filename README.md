@@ -1187,4 +1187,31 @@ function removeNumbersLessThan(num, obj) {
 ---
 
 
-## #25 - 
+## #25 - addFullNameProperty
+
+> Write a function called "addFullNameProperty".
+>
+> Given an object that has a "firstName" property and a "lastName" property, "addFullNameProperty" returns a "fullName" property whose value is a string with the first name and last name separated by a space.
+>
+> ```
+> var person = {
+  > firstName: 'Jade',
+  > lastName: 'Smith'
+> };
+> addFullNameProperty(person);
+> console.log(person.fullName); // --> 'Jade Smith'
+>
+> Starter Code :
+> function addFullNameProperty(obj) {
+  > // your code here
+> }
+> ```
+
+### Answer:
+
+```javascript
+function addFullNameProperty(obj) {
+  //create fullName key and set value to firstName + space + lastName
+  obj.fullName = obj["firstName"] + " " + obj["lastName"];
+}
+```
