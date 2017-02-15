@@ -1145,3 +1145,46 @@ function removeNumbersLargerThan(num, obj) {
   return obj;
 }
 ```
+---
+
+## #24 - removeNumbersLessThan
+
+> Write a function called "removeNumbersLessThan".
+>
+> Given a number and an object, "removeNumbersLessThan" removes any properties whose values are numbers less than the given number.
+>
+> ```
+> var obj = {
+  > a: 8,
+  > b: 2,
+  > c: 'montana'
+> }
+> removeNumbersLessThan(5, obj);
+> console.log(obj); // --> { a: 8, c: 'montana' }
+>
+>
+> Starter Code :
+> function removeNumbersLessThan(num, obj) {
+  > // your code here
+> }
+> ```
+
+### Answer:
+
+```javascript
+function removeNumbersLessThan(num, obj) {
+  //iterate through object
+  for (var key in obj){
+    //if value at key is smaller than num, remove
+    if (obj[key] < num){
+      delete obj[key];
+    }
+  }
+  //return obj
+  return obj;
+}
+```
+---
+
+
+## #25 - 
