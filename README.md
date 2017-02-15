@@ -1107,3 +1107,41 @@ function getFirstElementOfProperty(obj, key) {
   return arrayInsideObject.shift();
 }
 ```
+---
+
+## #23 - removeNumbersLargerThan
+
+> Write a function called "removeNumbersLargerThan".
+>
+> Given a number and an object, "removeNumbersLargerThan" removes any properties whose values are numbers greater than the given number.
+>
+> ```
+> var obj = {
+  > a: 8,
+  > b: 2,
+  > c: 'montana'
+> }
+> removeNumbersLargerThan(5, obj);
+> console.log(obj); // --> { b: 2, c: 'montana' }
+>
+> Starter Code :
+> function removeNumbersLargerThan(num, obj) {
+  > // your code here
+> }
+> ```
+
+### Answer:
+
+```javascript
+function removeNumbersLargerThan(num, obj) {
+  //iterate through object
+  for (var key in obj){
+    //if value at key is larger than num, remove
+    if (obj[key] > num){
+      delete obj[key];
+    }
+  }
+  //return obj
+  return obj;
+}
+```
