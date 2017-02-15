@@ -1018,6 +1018,49 @@ function getNthElementOfProperty(obj, key, n) {
   }
 
   //return value of arrayInsideObject at index "n"
-  return arrayInsideObject[n]
+  return arrayInsideObject[n];
+}
+```
+---
+
+
+## #21 - getLastElementOfProperty
+
+> Write a function called "getLastElementOfProperty".
+>
+> Given an object and a key, "getLastElementOfProperty" returns the last element of an array located at the given key.
+>
+> Notes:
+> * If the array is empty, it should return undefined.
+> * if the property at the given key is not an array, it should return undefined.
+> * If there is no property at the key, it should return undefined.
+>
+> ```
+> var obj = {
+  > key: [1, 2, 5]
+> };
+> var output = getLastElementOfProperty(obj, 'key');
+> console.log(output); // --> 5
+>
+> Starter Code :
+> function getLastElementOfProperty(obj, key) {
+  > // your code here
+> }
+> ```
+
+### Answer:
+
+```javascript
+function getLastElementOfProperty(obj, key) {
+  //set array at given key to variable
+  var arrayInsideObject = obj[key];
+
+  //if array is empty, or property at given key is not an array, or there is no property at key, immediately return undefined array
+  if (arrayInsideObject === undefined || arrayInsideObject.length < 1 || !(Array.isArray(arrayInsideObject)) ){
+    return undefined;
+  }
+
+  //pop off that last element of the array and return it
+  return arrayInsideObject.pop();
 }
 ```
