@@ -978,3 +978,46 @@ function getAllButLastElementOfProperty(obj, key) {
   return arrayInsideObject;
 }
 ```
+---
+
+
+## #20 - getNthElementOfProperty
+
+> Write a function called "getNthElementOfProperty".
+>
+> Given an object and a key, "getNthElementOfProperty" returns the nth element of an array located at the given key.
+>
+> Notes:
+> * If the array is empty, it should return undefined.
+> * If n is out of range, it should return undefined.
+> * If the property at the given key is not an array, it should return undefined.
+> * If there is no property at the key, it should return undefined.
+>
+> ```
+> var obj = {
+  > key: [1, 2, 6]
+> };
+> var output = getNthElementOfProperty(obj, 'key', 1);
+> console.log(output); // --> 2
+>
+> Starter Code :
+> function getNthElementOfProperty(obj, key, n) {
+  > // your code here
+> }
+> ```
+
+### Answer:
+
+```javascript
+function getNthElementOfProperty(obj, key, n) {
+  //set array at given key to variable
+  var arrayInsideObject = obj[key];
+  //if array empty, or n is out of range, or property at given key is not an array, or there is no property, immediately return undefined
+  if (arrayInsideObject === undefined || arrayInsideObject.length === 0 || n >= arrayInsideObject.length || !(Array.isArray(arrayInsideObject)) ){
+    return undefined;
+  }
+
+  //return value of arrayInsideObject at index "n"
+  return arrayInsideObject[n]
+}
+```
